@@ -19,9 +19,9 @@ namespace Wbskt.Client.Configurations
         ClientDetails ClientDetails { get; }
 
         /// <summary>
-        /// Gets the channel-specific details, such as subscriber ID and secret.
+        /// Gets the policy-specific details, such as policy ref ID and pin.
         /// These details are used to authenticate the client with the Wbskt server.
         /// </summary>
-        ChannelDetails ChannelDetails { get; }
+        PolicyDetails PolicyDetails { get; }
     }
 }

@@ -16,7 +16,7 @@ This project is ideal for applications requiring real-time updates, such as chat
 
 #### Setup
 
-Go to [wbskt.com](https://wbskt.com), log in, and create a channel. You will need to provide a `ChannelSecret`, and after creation, your channel will be assigned a `SubscriberId`.
+Go to [wbskt.com](https://wbskt.com), log in, and create a registration policy. You will need to provide a `Pin`.
 
 ##### Now in your .NET application:
 
@@ -25,10 +25,9 @@ Add a reference to the `Wbskt.Client.CSharp` library from [nuget.org](https://nu
 ```csharp
 var config = new WbsktConfigurationCustom
 {
-    ChannelDetails = new ChannelDetails()
+    PolicyDetails = new PolicyDetails()
     {
-        Secret = "{ChannelSecret}", // The secret you provided when creating the channel.
-        SubscriberId = "{SubscriberId}" // The ID you received when the channel was created.
+        Pin = 1234 // The PIN for the registration policy.
     },
     ClientDetails = new ClientDetails
     {

@@ -30,9 +30,9 @@ namespace Wbskt.Client.Configurations
         public ClientDetails ClientDetails => _settingsMonitor.CurrentValue.ClientDetails;
 
         /// <summary>
-        /// Gets the channel-specific details such as subscriber ID and secret.
+        /// Gets the policy-specific details such as policy ref ID and pin.
         /// </summary>
-        public ChannelDetails ChannelDetails => _settingsMonitor.CurrentValue.ChannelDetails;
+        public PolicyDetails PolicyDetails => _settingsMonitor.CurrentValue.PolicyDetails;
 
         /// <summary>
         /// Represents the configuration settings for the Wbskt client.
@@ -50,9 +50,9 @@ namespace Wbskt.Client.Configurations
             public ClientDetails ClientDetails { get; set; } = new ClientDetails();
 
             /// <summary>
-            /// Details about the channel, including subscriber ID and secret.
+            /// Details about the policy, including policy ref ID and pin.
             /// </summary>
-            public ChannelDetails ChannelDetails { get; set; } = new ChannelDetails();
+            public PolicyDetails PolicyDetails { get; set; } = new PolicyDetails();
         }
     }
 }

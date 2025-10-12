@@ -16,15 +16,9 @@ namespace Wbskt.Client.Helpers
                 return false;
             }
 
-            if (configuration.ChannelDetails.SubscriberId == default)
+            if (configuration.PolicyDetails.Pin == default)
             {
-                logger?.LogError("SubscriberId is not set.");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(configuration.ChannelDetails.Secret))
-            {
-                logger?.LogError("Secret is not set.");
+                logger?.LogError("Pin is not set.");
                 return false;
             }
 

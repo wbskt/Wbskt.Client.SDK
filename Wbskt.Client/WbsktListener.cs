@@ -25,7 +25,7 @@ namespace Wbskt.Client
         /// Delegate for handling received payloads.
         /// </summary>
         /// <param name="clientPayload">The payload received from the WebSocket server.</param>
-        public delegate void TriggerActionHandler(UserClientPayload clientPayload);
+        public delegate void TriggerActionHandler(ClientPayload clientPayload);
 
         /// <summary>
         /// Event triggered when a payload is received from the WebSocket server.
@@ -156,7 +156,7 @@ namespace Wbskt.Client
         /// This method is called by the WebSocket handler when a new message is received.
         /// </summary>
         /// <param name="clientPayload">The payload received from the WebSocket server.</param>
-        private void OnReceivedPayload(UserClientPayload clientPayload)
+        private void OnReceivedPayload(ClientPayload clientPayload)
         {
             // Trigger the event to notify subscribers of the received payload.
             ReceivedPayloadEvent?.Invoke(clientPayload);

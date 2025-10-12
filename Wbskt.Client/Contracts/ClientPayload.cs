@@ -6,7 +6,7 @@ namespace Wbskt.Client.Contracts
     /// Represents the payload sent by the user to a Wbskt channel.
     /// This class encapsulates the data being transmitted to the channel.
     /// </summary>
-    public class UserClientPayload
+    public class ClientPayload
     {
         /// <summary>
         /// Gets the data being sent to the Wbskt channel.
@@ -19,9 +19,9 @@ namespace Wbskt.Client.Contracts
         public Guid PublisherId { get; set; }
 
         /// <summary>
-        /// Gets the channelId of the channel from which the payload was received from. (info: multiple channels can be triggered using a single publisherId)
+        /// Gets the policyRefId of the policy from which the payload was received from.
         /// </summary>
-        public Guid ChannelSubscriberId { get; set; }
+        public Guid PolicyRefId { get; set; }
 
         /// <summary>
         /// Gets the uniqueId for the payload sent by the user.

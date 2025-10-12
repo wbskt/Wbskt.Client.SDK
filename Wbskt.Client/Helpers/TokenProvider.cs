@@ -25,26 +25,20 @@ namespace Wbskt.Client.Helpers
                 BaseAddress = new Uri($"https://{configuration.WbsktServerAddress}")
             };
 
-            var channel1 = new ClientChannel()
-            {
-                ChannelSecret = configuration.ChannelDetails.Secret,
-                ChannelSubscriberId = configuration.ChannelDetails.SubscriberId
-            };
             try
             {
-                var clientConnReq = new ClientConnectionRequest
+                var clientRegReq = new ClientRegistrationRequest
                 {
-                    Channels = new [] { channel1 },
-                    ClientName = configuration.ClientDetails.Name,
-                    ClientUniqueId = configuration.ClientDetails.UniqueId,
+                    Pin = configuration.PolicyDetails.Pin,
+                    ClientName = configuration.ClientDetails.Name
                 };
 
 #if NETSTANDARD
-                var json = JsonSerializer.Serialize(clientConnReq);
+                var json = JsonSerializer.Serialize(clientRegReq);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var result = await httpClient.PostAsync("/api/channels/client", content);
+                var result = await httpClient.PostAsync("/api/registrations", content);
 #elif NET
-                var result = await httpClient.PostAsync("/api/channels/client", JsonContent.Create(clientConnReq));
+                var result = await httpClient.PostAsJsonAsync("/api/registrations", clientRegReq);
 #endif
 
                 if (result.IsSuccessStatusCode)
