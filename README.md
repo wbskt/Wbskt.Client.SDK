@@ -1,3 +1,14 @@
+> [!WARNING]
+> **This repository is archived and no longer maintained.** It is the original client, from before
+> the device protocol was written down, and it does not speak that protocol.
+>
+> The .NET SDK now lives in [wbskt/Wbskt](https://github.com/wbskt/Wbskt) under
+> `Clients/Wbskt.Client.Sdk`, and ships under the same package name, `Wbskt.Client`, from
+> `1.0.0-preview.1`. The `0.x` versions on nuget.org are this code and are deprecated: move to the
+> new package. For other platforms, see the ESP32 library
+> ([wbskt/Wbskt.Arduino](https://github.com/wbskt/Wbskt.Arduino)) and the Python SDK
+> (`Clients/python` in wbskt/Wbskt). The protocol itself is `Docs/Device.Protocol.md` there.
+
 ### Wbskt Client for Real-Time Communication
 
 Wbskt.Client.CSharp project is a .NET-based client library designed for seamless real-time communication with the Wbskt platform. It provides robust features for managing WebSocket connections, sending and receiving messages, and handling authentication via JWT tokens. The library is highly configurable, supporting dynamic settings through `IOptionsMonitor` or custom configurations. Key functionalities include:
